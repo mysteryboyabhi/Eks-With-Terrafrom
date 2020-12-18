@@ -2,14 +2,6 @@
 # # https://learn.hashicorp.com/terraform/kubernetes/provision-eks-cluster#optional-configure-terraform-kubernetes-provider
 # # To learn how to schedule deployments and services using the provider, go here: https://learn.hashicorp.com/terraform/kubernetes/deploy-nginx-kubernetes
 
-terraform {
-  required_providers {
-    kubernetes = {
-      source = "hashicorp/kubernetes"
-    }
-  }
-}
-
 provider "kubernetes" {
   load_config_file       = "false"
   host                   = data.aws_eks_cluster.cluster.endpoint

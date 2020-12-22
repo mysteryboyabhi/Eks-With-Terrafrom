@@ -3,6 +3,11 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
   replicas: 1
   revisionHistoryLimit: 3
   selector:
